@@ -1,0 +1,11 @@
+**/bin
+**/obj
+packages
+.vs
+
+*.dll
+*.exe
+*.pdb
+
+
+*.excel
