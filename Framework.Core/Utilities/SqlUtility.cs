@@ -4,9 +4,8 @@
     using System.Data;
     using System.Data.SqlClient;
     
-    public class SqlUtility
+    public static class SqlUtility
     {
-
         public static DataTable ExecuteSelectQuery(string connectionString, string queryString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

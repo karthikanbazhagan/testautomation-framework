@@ -5,7 +5,7 @@
     using System.Data.OleDb;
     using System.Reflection;
 
-    public class ExcelDataHandler
+    public static class ExcelDataHandler
     {
         
         public static DataSet LoadDataFromWorkbook(string filename, bool header)
