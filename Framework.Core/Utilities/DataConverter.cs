@@ -5,7 +5,7 @@
     using System.Data;
     using System.Reflection;
         
-    public class DataConverter
+    public static class DataConverter
     {
         
         public static List<T> CreateListFromTable<T>(DataTable tbl) where T : new()

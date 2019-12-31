@@ -3,8 +3,7 @@
     using System.Collections.Generic;
     using System.Dynamic;
     using System.Linq;
-
-    
+        
     public class DDModel : DynamicObject
     {
         Dictionary<string, object> dictionary = new Dictionary<string, object>();
@@ -109,5 +108,4 @@
         }
 
     }
-
 }
