@@ -1,11 +1,13 @@
-﻿namespace Framework.Core.Utilities
+﻿namespace Framework.Core.Extension
 {
     using System;
     using OpenQA.Selenium;
+    using OpenQA.Selenium.Interactions;
     using OpenQA.Selenium.Internal;
+    using OpenQA.Selenium.Remote;
     using OpenQA.Selenium.Support.UI;
 
-    public static class SeleniumUtilities
+    public static class SeleniumExtension
     {
         public static void ForceClearAndSendKeys(this IWebElement element, string text)
         {
