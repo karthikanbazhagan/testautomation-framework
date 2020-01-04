@@ -60,7 +60,7 @@
     <Compile Include="Utilities\WebDriverUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utilities\CsvHelper.cs" />
+    <Compile Include="Utilities\CsvDataHandler.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

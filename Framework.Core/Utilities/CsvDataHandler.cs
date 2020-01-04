@@ -5,7 +5,7 @@
     using System.IO;
     using System.Reflection;
 
-    public static class CsvHelper
+    public static class CsvDataHandler
     {
 
         private static DataTable ReadHeader(string csvFile)
