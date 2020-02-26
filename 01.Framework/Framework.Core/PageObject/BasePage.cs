@@ -5,8 +5,8 @@
 
     using OpenQA.Selenium;
     using OpenQA.Selenium.Support.UI;
-    
-    public abstract class BasePage
+
+    public abstract class BasePage : IPage
     {
         // Webdriver should not be available to the outside world (even to the concrete Page Object classes)
         private IWebDriver driver;
@@ -43,7 +43,7 @@
         }
 
         protected bool IsElementAvailable(By by, int waitInSec)
-        { 
+        {
             try
             {
                 GetElement(by, waitInSec);
@@ -63,7 +63,7 @@
             return wait.Until(driver => driver.FindElement(by));
         }
 
-        private  IList<IWebElement> GetElements(By by, int waitInSec)
+        private IList<IWebElement> GetElements(By by, int waitInSec)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitInSec));
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
