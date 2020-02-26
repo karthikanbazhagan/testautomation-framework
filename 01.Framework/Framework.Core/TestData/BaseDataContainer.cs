@@ -1,9 +1,10 @@
 ﻿namespace Framework.Core.TestData
 {
-    using Framework.Core.Utilities;
     using System.Collections.Generic;
     using System.Reflection;
 
+    using Framework.Core.Utilities;
+    
     public abstract class BaseDataContainer<T> : IDataContainer<T> where T : class, new()
     {
         protected IList<T> Data;

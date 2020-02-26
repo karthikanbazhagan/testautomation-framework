@@ -60,6 +60,7 @@
     <Compile Include="DataAccess\OracleDatabaseExecutor.cs" />
     <Compile Include="Factory\WebDriverFactory.cs" />
     <Compile Include="PageObject\BasePage.cs" />
+    <Compile Include="PageObject\IPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestData\BaseDataContainer.cs" />
     <Compile Include="TestData\IDataContainer.cs" />
@@ -68,6 +69,8 @@
     <Compile Include="Utilities\DDModel.cs" />
     <Compile Include="Extension\SeleniumExtension.cs" />
     <Compile Include="Utilities\WebDriverUtilities.cs" />
+    <Compile Include="Wizard\BaseWizard.cs" />
+    <Compile Include="Wizard\IWizard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utilities\CsvDataHandler.cs" />
