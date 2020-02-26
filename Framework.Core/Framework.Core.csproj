@@ -57,22 +57,22 @@
     <Compile Include="DataAccess\BaseDatabaseExecutor.cs" />
     <Compile Include="DataAccess\IDatabaseExecutor.cs" />
     <Compile Include="DataAccess\MsSqlDatabaseExecutor.cs" />
+    <Compile Include="DataAccess\OracleDatabaseExecutor.cs" />
     <Compile Include="Factory\WebDriverFactory.cs" />
     <Compile Include="PageObject\BasePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestData\BaseDataContainer.cs" />
+    <Compile Include="TestData\IDataContainer.cs" />
     <Compile Include="Utilities\DataConverter.cs" />
     <Compile Include="Utilities\ExcelDataHandler.cs" />
     <Compile Include="Utilities\DDModel.cs" />
     <Compile Include="Extension\SeleniumExtension.cs" />
-    <Compile Include="Utilities\SqlUtility.cs" />
     <Compile Include="Utilities\WebDriverUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utilities\CsvDataHandler.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TestData\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
