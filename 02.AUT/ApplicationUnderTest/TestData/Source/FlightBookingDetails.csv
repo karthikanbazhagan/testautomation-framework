@@ -1,0 +1,4 @@
+TripType,Origin,Destination,Class,TravelDate,ReturnDate,NumberOfAdults,NumberOfChildren,NumberOfInfantsInSeat,NumberOfInfantsOnLap
+One-way,Chennai,Delhi,Economy,15/03/2020,,2,1,0,0
+Round trip,Chennai,Delhi,Business,15/03/2020,20/03/2020,2,0,1,0
+One-way,Chennai,Delhi,FirstClass,15/03/2020,,2,2,0,1
