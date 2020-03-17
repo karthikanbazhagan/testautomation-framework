@@ -46,10 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant\Mappings.cs" />
+    <Compile Include="Enum\TripType.cs" />
+    <Compile Include="TestData\Container\FlightBookingDetailsDataContainer.cs" />
+    <Compile Include="TestData\EnvironmentDetails.cs" />
+    <Compile Include="TestData\Model\FlightBookingDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="TestData\Source\FlightBookingDetails.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\01.Framework\Framework.Core\Framework.Core.csproj">
+      <Project>{4052f2fb-f73a-4ee8-9794-89c47728f32c}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
