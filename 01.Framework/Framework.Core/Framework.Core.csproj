@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.19.6.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.19.6.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -45,10 +45,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+      <HintPath>..\..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <HintPath>..\..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -58,19 +58,21 @@
     <Compile Include="DataAccess\IDatabaseExecutor.cs" />
     <Compile Include="DataAccess\MsSqlDatabaseExecutor.cs" />
     <Compile Include="DataAccess\OracleDatabaseExecutor.cs" />
+    <Compile Include="Factory\PageObjectFactory.cs" />
     <Compile Include="Factory\WebDriverFactory.cs" />
+    <Compile Include="Function\BaseWebKeyword.cs" />
+    <Compile Include="Function\IKeyword.cs" />
+    <Compile Include="Function\IWebKeyword.cs" />
     <Compile Include="PageObject\BasePage.cs" />
     <Compile Include="PageObject\IPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestData\BaseDataContainer.cs" />
     <Compile Include="TestData\IDataContainer.cs" />
+    <Compile Include="TestData\ITestData.cs" />
     <Compile Include="Utilities\DataConverter.cs" />
     <Compile Include="Utilities\ExcelDataHandler.cs" />
-    <Compile Include="Utilities\DDModel.cs" />
     <Compile Include="Extension\SeleniumExtension.cs" />
     <Compile Include="Utilities\WebDriverUtilities.cs" />
-    <Compile Include="Wizard\BaseWizard.cs" />
-    <Compile Include="Wizard\IWizard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utilities\CsvDataHandler.cs" />

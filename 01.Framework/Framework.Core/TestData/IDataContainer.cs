@@ -2,7 +2,7 @@
 {
     using System.Reflection;
 
-    public interface IDataContainer<T> where T: class, new()
+    public interface IDataContainer<T> where T: ITestData
     {
         void ImportData();
 

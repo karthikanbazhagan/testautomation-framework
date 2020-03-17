@@ -80,31 +80,5 @@
             dataTable.Rows.Add(arr);
             return dataTable;
         }
-        
-        public static List<dynamic> CreateListFromTable(DataTable tbl)
-        {
-            List<dynamic> lst = new List<dynamic> ();
-            foreach (DataRow r in tbl.Rows)
-            {
-                lst.Add(CreateItemFromRow(r));
-            }
-            return lst;
-        }
-        
-        public static dynamic CreateItemFromRow(DataRow row)
-        {
-            DDModel item = new DDModel();
-            SetItemFromRow(item, row);
-            return item;
-        }
-        
-        private static void SetItemFromRow(DDModel item, DataRow row)
-        {
-            foreach (DataColumn c in row.Table.Columns)
-            {
-                item.AddMember(c.ColumnName, row[c]);
-            }
-        }
-
     }
 }

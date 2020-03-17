@@ -191,55 +191,7 @@
                 conn.Close();
             }
         }
-        
-        public static void InsertDynamicDataIntoTable(string filename, string table, dynamic item)
-        {
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;" +
-                "Data Source=" + filename + ";Extended Properties='Excel 8.0; HDR=YES'";
-
-            OleDbConnection conn = new OleDbConnection(connectionString);
-            OleDbCommand cmd = null;
-
-            string fieldsList = "";
-            string valuesList = "";
-
-            DataColumnCollection columns = LoadDataFromTable(filename, table, true).Columns;
-
-            try
-            {
-                for (int i = 0; i < columns.Count; i++)
-                {
-                    
-                    if (item.Contains(columns[i].ColumnName))
-                    {
-                        fieldsList = fieldsList + "[" + columns[i].ColumnName + "]";
-                        valuesList = valuesList + "'" + item.GetMember(columns[i].ColumnName).ToString() + "'";
-                    }
-
-                    if (i == columns.Count - 1)
-                    {
-                        continue;
-                    }
-                    fieldsList = fieldsList + ",";
-                    valuesList = valuesList + ",";
-                }
-
-                string cmdText = "INSERT INTO [" + table + "] (" + fieldsList + ") VALUES( " + valuesList + " )";
-                conn.Open();
-                cmd = new OleDbCommand(cmdText, conn);
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                throw new InvalidOperationException(e.Message);
-            }
-            finally
-            {
-                cmd.Dispose();
-                conn.Close();
-            }
-        }
-        
+                
         public static void UpdateWorkSheet(string filename, string sheetName, DataColumn primaryKey, DataRow row)
         {
             string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;" +
@@ -334,57 +286,6 @@
                 }
 
                 cmdText = cmdText + " WHERE " + primaryKeyStr + " = '" + primaryKey.GetValue(item).ToString() + "'";
-                conn.Open();
-                cmd = new OleDbCommand(cmdText, conn);
-
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                throw new InvalidOperationException(e.Message);
-            }
-            finally
-            {
-                cmd.Dispose();
-                conn.Close();
-            }
-        }
-        
-        public static void UpdateTableDynamic(string filename, string table, string primaryKey, dynamic item)
-        {
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;" +
-                "Data Source=" + filename + ";Extended Properties='Excel 8.0; HDR=YES'";
-
-            OleDbConnection conn = new OleDbConnection(connectionString);
-            OleDbCommand cmd = null;
-
-            DataColumnCollection columns = LoadDataFromTable(filename, table, true).Columns;
-            //string primaryKeyStr = primaryKey.Name.ToString();
-
-            try
-            {
-                string cmdText = "UPDATE [" + table + "] SET ";
-                for (int i = 0; i < columns.Count; i++)
-                {
-
-                    if (columns[i].ColumnName == primaryKey)
-                    {
-                        continue;
-                    }
-                    
-                    if (item.Contains(columns[i].ColumnName))
-                    {
-                        cmdText = cmdText + columns[i].ColumnName + " = '" + item.GetMember(columns[i].ColumnName).ToString() + "'";
-                    }
-
-                    if (i == columns.Count - 2)
-                    {
-                        continue;
-                    }
-                    cmdText = cmdText + ",";
-                }
-
-                cmdText = cmdText + " WHERE " + primaryKey + " = '" + item.GetMember(primaryKey).ToString() + "'";
                 conn.Open();
                 cmd = new OleDbCommand(cmdText, conn);
 
