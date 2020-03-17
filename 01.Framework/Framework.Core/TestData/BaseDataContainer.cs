@@ -5,7 +5,7 @@
 
     using Framework.Core.Utilities;
     
-    public abstract class BaseDataContainer<T> : IDataContainer<T> where T : class, new()
+    public abstract class BaseDataContainer<T> : IDataContainer<T> where T : ITestData, new()
     {
         protected IList<T> Data;
 

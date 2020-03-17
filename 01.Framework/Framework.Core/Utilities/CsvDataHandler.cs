@@ -141,23 +141,6 @@
             InsertData(csvFile, dataRow);
         }
 
-        public static void InsertDynamicData(string csvFile, dynamic item)
-        {
-            var dataTable = ReadHeader(csvFile);
-            var dataRow = dataTable.NewRow();
-            var dataColumns = dataTable.Columns;
-
-            foreach (var column in dataColumns)
-            {
-                if (item.Contains(column.ToString()))
-                {
-                    dataRow[column.ToString()] = item.GetMember(column.ToString());
-                }
-            }
-
-            InsertData(csvFile, dataRow);
-        }
-
         public static void UpdateData(string csvFile, DataRow inputRow, string primaryKey)
         {
             DataTable dTable = ReadData(csvFile);
@@ -228,22 +211,6 @@
 
             UpdateData(csvFile, dataRow, primaryKey.Name);
         }
-
-        public static void UpdateDynamicData(string csvFile, string primaryKey, dynamic item)
-        {
-            var dataTable = ReadHeader(csvFile);
-            var dataRow = dataTable.NewRow();
-            var dataColumns = dataTable.Columns;
-
-            foreach (var column in dataColumns)
-            {
-                if (item.Contains(column.ToString()))
-                {
-                    dataRow[column.ToString()] = item.GetMember(column.ToString());
-                }
-            }
-
-            UpdateData(csvFile, dataRow, primaryKey);
-        }
+        
     }
 }
