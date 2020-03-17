@@ -9,3 +9,4 @@ packages
 
 
 *.excel
+/02.AUT/ApplicationUnderTest/ApplicationUnderTest.csproj.user
