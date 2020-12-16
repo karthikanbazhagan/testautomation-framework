@@ -10,3 +10,4 @@ packages
 
 *.excel
 /02.AUT/ApplicationUnderTest/ApplicationUnderTest.csproj.user
+/03.TestProject/TestProject/TestProject.csproj.user
