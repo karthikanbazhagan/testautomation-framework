@@ -13,11 +13,11 @@
 
     public static class WebDriverUtilities
     {
-        private static TimeSpan TimeoutInSecs;
+        private static TimeSpan TimeoutInSecs = TimeSpan.FromSeconds(10);
 
         public static IWebDriver StartWebDriver()
         {
-            var browser = ConfigurationManager.AppSettings["SeleniumBrowserName"];
+            var browser = "Chrome"; //ConfigurationManager.AppSettings["SeleniumBrowserName"];
             var Browser = BrowserType.Chrome;
 
             if (browser != "Any")
@@ -75,6 +75,7 @@
             }
 
             webDriver.Manage().Cookies.DeleteAllCookies();
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             return webDriver;
         }
     }
